@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db8884bf6568b14789298fbbae64a60, type: 3}
+  m_Name: PlayerData
+  m_EditorClassIdentifier: 
+  m_totalHp: 100
+  m_currentHp: 100
+  m_potions: 0
+  m_magicSelected: 
+  m_attackPower: 0a0000001900000023000000
+  m_detected: 0
+  m_alert: 0
+  m_timeToRaiseAlert: -0.01876447
+  m_defaultAlertTime: 25
+  m_lastKnownPosition: {x: -7.80013, y: -0.003924012, z: -9.393105}
+  _greenKey: 0
+  _blueKey: 0
+  _yellowKey: 0
