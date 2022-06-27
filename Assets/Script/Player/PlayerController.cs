@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
         _eveAudioSource = GetComponentInChildren<AudioSource>();
         _playerCurrentHp = _playerData.m_totalHp;
         _playerAudio = GetComponentInChildren<PlayerAudioManager>();
-        
+
     }
     #endregion
 
@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
 
         float _xHorizontal = Input.GetAxis("Horizontal");
         float _zVertical = Input.GetAxis("Vertical");
-        
+
 
         if (!_isRolling)
         {
@@ -336,9 +336,13 @@ public class PlayerController : MonoBehaviour
                     TransitionToState(State.HIT);
                 }
 
-                if (_levelManager.m_cinematic)
+                if (_levelManager != null)
                 {
-                    TransitionToState(State.CINEMATIC);
+
+                    if (_levelManager.m_cinematic)
+                    {
+                        TransitionToState(State.CINEMATIC);
+                    }
                 }
 
                 break;
