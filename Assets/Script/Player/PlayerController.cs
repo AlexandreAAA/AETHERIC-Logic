@@ -16,7 +16,6 @@ public enum State
 }
 public class PlayerController : MonoBehaviour
 {
-
     #region Exposed
 
     [Header("Data")]
@@ -76,7 +75,6 @@ public class PlayerController : MonoBehaviour
     private LevelManager _levelManager;
 
     #endregion
-
 
     #region Init
 
@@ -500,7 +498,7 @@ public class PlayerController : MonoBehaviour
                 break;
             case State.DEAD:
 
-                _levelManager.IsDead();
+                //_levelManager.IsDead();
 
                 if (!m_isDead)
                 {

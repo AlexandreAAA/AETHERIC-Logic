@@ -9,7 +9,7 @@ namespace ScriptableObjectArchitecture.Examples
 
         private void Update()
         {
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.UpArrow))
                 transform.position += Vector3.up * _moveSpeed.Value;
 
             if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
@@ -18,7 +18,7 @@ namespace ScriptableObjectArchitecture.Examples
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
                 transform.position += Vector3.right * _moveSpeed.Value;
 
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.LeftArrow))
                 transform.position += Vector3.left * _moveSpeed.Value;
         }
     }
