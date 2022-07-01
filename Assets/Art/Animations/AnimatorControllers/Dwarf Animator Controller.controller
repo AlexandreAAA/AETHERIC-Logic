@@ -937,7 +937,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Animations_With_Weapon
+  m_Name: Dwarf Animator Controller
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: VeloX

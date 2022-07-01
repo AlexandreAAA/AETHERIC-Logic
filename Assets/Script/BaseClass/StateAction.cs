@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateAction : MonoBehaviour
+namespace EveController
 {
-    // Start is called before the first frame update
-    void Start()
+    public abstract class StateAction : ScriptableObject
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public abstract void Execute(StateController controller);
     }
 }
