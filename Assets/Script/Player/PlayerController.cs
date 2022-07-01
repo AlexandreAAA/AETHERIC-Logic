@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using UnityEditor;
+
 
 public enum State
 {
-    IDLE,
-    RUN,
-    ROLL,
-    CROUCH,
-    ATTACK,
-    CASTING,
-    HIT,
-    DEAD,
-    CINEMATIC
+    IDLE = 0,
+    RUN = 1 << 0,
+    ROLL = 1 << 1,
+    CROUCH = 1 << 2,
+    ATTACK = 1 << 3,
+    CASTING = 1 << 4,
+    HIT = 1 << 5,
+    DEAD = 1 << 6,
+    CINEMATIC = 1 << 7
 }
 public class PlayerController : MonoBehaviour
 {

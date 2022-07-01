@@ -9,11 +9,11 @@ C:\Program Files\Unity\Hub\Editor\2020.3.33f1\Editor\Unity.exe
 -batchMode
 -noUpm
 -name
-AssetImportWorker1
+AssetImportWorker2
 -projectPath
 C:/Users/ISKANDER/Documents/GitHub/AETHERIC-Logic
 -logFile
-Logs/AssetImportWorker1.log
+Logs/AssetImportWorker2.log
 -srvPort
 56402
 Successfully changed project path to: C:/Users/ISKANDER/Documents/GitHub/AETHERIC-Logic
