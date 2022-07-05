@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21b1cb88d0688fe43871b95ee873b242, type: 3}
-  m_Name: BaseLocomotion
+  m_Name: Crouch Locomotion
   m_EditorClassIdentifier: 
   onEnter:
-  - {fileID: 11400000, guid: de481204bd5b0d04096d42a5be86bdb0, type: 2}
+  - {fileID: 11400000, guid: f10486765c59aea4cb35371dd63e5094, type: 2}
+  - {fileID: 11400000, guid: c78d7d6c9a1483e40bbefe27b052eaf8, type: 2}
   onUpdate:
   - {fileID: 11400000, guid: 1ffbf091873ef2d46b6c6c0972ec77bd, type: 2}
   - {fileID: 11400000, guid: f44179d90e86c0c479cc4497168471d9, type: 2}
@@ -23,9 +24,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 410fb9ba7fba0b0428bc9070593adc8d, type: 2}
   - {fileID: 11400000, guid: 539bb0a1968f4ae4dabdb702e397eabc, type: 2}
   onExit:
-  - {fileID: 11400000, guid: 80d7945e3b6e9bb43910d90f69c12fbc, type: 2}
+  - {fileID: 11400000, guid: faf5b41e9ad20c7459b140463dd283ff, type: 2}
   transitions:
   - id: 0
     condition: {fileID: 11400000, guid: 03f70664faac197428d68ef4729b73c1, type: 2}
-    targetState: {fileID: 11400000, guid: 116f9bdc7dd43744786bf76898269b57, type: 2}
+    targetState: {fileID: 11400000, guid: a82a1f36e401ca0489b9d53de43fc021, type: 2}
     disable: 0

@@ -13,11 +13,13 @@ namespace EveController
         public Rigidbody rigidBody;
         public Animator anim;
         public InputHandler playerInput;
+        public CapsuleCollider capsCollider;
         #endregion
 
         #region Hide
         public bool isrunning;
         public bool isGrounded;
+        public bool isCrouching;
         #endregion
 
         void Start()
@@ -27,6 +29,7 @@ namespace EveController
             mTransform = this.transform;
             rigidBody = GetComponent<Rigidbody>();
             anim = GetComponentInChildren<Animator>();
+            capsCollider = GetComponent<CapsuleCollider>();
             
             if (currentState != null)
             {

@@ -4,7 +4,6 @@ using UnityEngine;
 using System;
 using UnityEditor;
 
-
 public enum State
 {
     IDLE = 0,
@@ -25,8 +24,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private CharacterData _playerData;
     public int _playerCurrentHp;
-    [SerializeField]
-    private EnnemyData _ennemyData;
 
     [Header("Speed & Move Parameters")]
     [SerializeField]
@@ -85,12 +82,10 @@ public class PlayerController : MonoBehaviour
     {
         _eveAnimator = GetComponentInChildren<Animator>();
         _eveRigidbody = GetComponent<Rigidbody>();
-        _cameraTransform = Camera.main.transform;
         _playerTransform = GetComponent<Transform>();
-
     }
 
-    void Start()
+    private void Start()
     {
         TransitionToState(State.IDLE);
         _playerCrouch = GetComponent<PlayerCrouch>();
@@ -99,27 +94,22 @@ public class PlayerController : MonoBehaviour
         _eveAudioSource = GetComponentInChildren<AudioSource>();
         _playerCurrentHp = _playerData.m_totalHp;
         _playerAudio = GetComponentInChildren<PlayerAudioManager>();
-
     }
     #endregion
 
-
     #region Unity API
 
-    void Update()
+    private void Update()
     {
         _eveAnimator.SetFloat("DirMag", _movement.magnitude);
         _playerRot.x = 0f;
 
         RayCasting();
 
-
         // PLAYER INPUTS
         _movement = new Vector3(Input.GetAxis("Horizontal"), _directionInput.y, Input.GetAxis("Vertical"));
 
         float _xHorizontal = Input.GetAxis("Horizontal");
-        float _zVertical = Input.GetAxis("Vertical");
-
 
         if (!_isRolling)
         {
@@ -149,7 +139,6 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-
         OnStateUpdate();
 
         //Melee Attack Input
@@ -165,7 +154,6 @@ public class PlayerController : MonoBehaviour
         }
 
         _playerData.m_currentHp = _playerCurrentHp;
-
     }
 
     private void FixedUpdate()
@@ -175,7 +163,7 @@ public class PlayerController : MonoBehaviour
         //Rigidbody Velocity
         if (_isRolling)
         {
-            _eveRigidbody.velocity = _orientation.normalized * _rollSpeed * Time.fixedDeltaTime;
+            _eveRigidbody.velocity = _rollSpeed * Time.fixedDeltaTime * _orientation.normalized;
         }
         else if (!m_isCrouch && !m_isCasting)
         {
@@ -193,7 +181,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //SOFTLOCK
-        if (m_isComboing && m_ennemyTransform != null || _playerCrouch._stealthAttack && m_ennemyTransform != null)
+        if ((m_isComboing && m_ennemyTransform != null) || (_playerCrouch._stealthAttack && m_ennemyTransform != null))
         {
             _targetRot.x = 0f;
             _eveRigidbody.MoveRotation(_targetRot.normalized);
@@ -208,18 +196,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnGUI()
-    {
-        //GUILayout.Button(_currentState.ToString() + _orientation.ToString() + _rollSpeed.ToString());
-    }
-
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position + Vector3.up, _detectRange);
     }
 
     #endregion
-
 
     #region STATE MACHINE
 
@@ -339,7 +321,6 @@ public class PlayerController : MonoBehaviour
 
                 if (_levelManager != null)
                 {
-
                     if (_levelManager.m_cinematic)
                     {
                         TransitionToState(State.CINEMATIC);
@@ -589,7 +570,6 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-
     #region Main Method
 
     private void SetOrientation()
@@ -609,25 +589,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void MeleeCombo()
-    {
-        if (!m_isCrouch && Input.GetButtonDown("Fire1"))
-        {
-            _comboTime = _timeToDropCombo;
-            _comboTime -= Time.deltaTime;
-            m_isComboing = true;
-
-            _eveAnimator.SetBool("IsCombo", m_isComboing);
-            _eveAnimator.SetTrigger("Attack");
-        }
-
-        if (_comboTime < 0f)
-        {
-            m_isComboing = false;
-            _eveAnimator.SetBool("isCombo", m_isComboing);
-        }
-    }
-
     public void ComboDir()
     {
         if (m_ennemyTransform != null)
@@ -641,10 +602,10 @@ public class PlayerController : MonoBehaviour
     private void RayCasting()
     {
         _groundDetectRaycasts[0] = new Ray(transform.position + Vector3.up, Vector3.down);
-        _groundDetectRaycasts[1] = new Ray(transform.position + Vector3.up + Vector3.forward * _rayOffset, Vector3.down);
-        _groundDetectRaycasts[2] = new Ray(transform.position + Vector3.up - Vector3.forward * _rayOffset, Vector3.down);
-        _groundDetectRaycasts[3] = new Ray(transform.position + Vector3.up + Vector3.right * _rayOffset, Vector3.down);
-        _groundDetectRaycasts[4] = new Ray(transform.position + Vector3.up - Vector3.right * _rayOffset, Vector3.down);
+        _groundDetectRaycasts[1] = new Ray(transform.position + Vector3.up + (Vector3.forward * _rayOffset), Vector3.down);
+        _groundDetectRaycasts[2] = new Ray(transform.position + Vector3.up - (Vector3.forward * _rayOffset), Vector3.down);
+        _groundDetectRaycasts[3] = new Ray(transform.position + Vector3.up + (Vector3.right * _rayOffset), Vector3.down);
+        _groundDetectRaycasts[4] = new Ray(transform.position + Vector3.up - (Vector3.right * _rayOffset), Vector3.down);
 
         int _hitCount = 0;
         _averageGroundHeight = Vector3.zero;
@@ -664,7 +625,7 @@ public class PlayerController : MonoBehaviour
 
         if (_hitCount > 0)
         {
-            _averageGroundHeight = _averageGroundHeight / _hitCount;
+            _averageGroundHeight /= _hitCount;
             _averageGroundHeight.y += _heightOffset;
         }
 
@@ -695,24 +656,21 @@ public class PlayerController : MonoBehaviour
 
         if (_isRolling)
         {
-            _eveRigidbody.velocity = _orientation.normalized * _rollSpeed * Time.fixedDeltaTime;
+            _eveRigidbody.velocity = _rollSpeed * Time.fixedDeltaTime * _orientation.normalized;
         }
     }
 
     #endregion
 
-
     #region Privates
 
     private State _currentState;
-
-    private Transform _cameraTransform;
 
     private Rigidbody _eveRigidbody;
 
     private Animator _eveAnimator;
 
-    private Ray[] _groundDetectRaycasts = new Ray[5];
+    private readonly Ray[] _groundDetectRaycasts = new Ray[5];
 
     private Vector3 _averageGroundHeight;
 
@@ -739,8 +697,6 @@ public class PlayerController : MonoBehaviour
     private Quaternion _targetRot;
 
     private Quaternion _playerRot;
-
-    private Vector3 _targetPos;
 
     private PlayerCrouch _playerCrouch;
 
