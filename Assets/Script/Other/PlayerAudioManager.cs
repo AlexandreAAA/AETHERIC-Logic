@@ -50,10 +50,7 @@ public class PlayerAudioManager : MonoBehaviour
         _iK = GetComponent<IK>();
     }
 
-    private void Update()
-    {
-        
-    }
+   
 
     #region Main Method
 

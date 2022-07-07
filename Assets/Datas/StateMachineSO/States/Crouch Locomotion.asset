@@ -15,6 +15,7 @@ MonoBehaviour:
   onEnter:
   - {fileID: 11400000, guid: f10486765c59aea4cb35371dd63e5094, type: 2}
   - {fileID: 11400000, guid: c78d7d6c9a1483e40bbefe27b052eaf8, type: 2}
+  - {fileID: 11400000, guid: 36947ba6b7bc7bf46a12e68030c61858, type: 2}
   onUpdate:
   - {fileID: 11400000, guid: 1ffbf091873ef2d46b6c6c0972ec77bd, type: 2}
   - {fileID: 11400000, guid: f44179d90e86c0c479cc4497168471d9, type: 2}
@@ -25,6 +26,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 539bb0a1968f4ae4dabdb702e397eabc, type: 2}
   onExit:
   - {fileID: 11400000, guid: faf5b41e9ad20c7459b140463dd283ff, type: 2}
+  - {fileID: 11400000, guid: 81002fcedfbdfc24f910b0ffb7ba1f19, type: 2}
   transitions:
   - id: 0
     condition: {fileID: 11400000, guid: 03f70664faac197428d68ef4729b73c1, type: 2}
