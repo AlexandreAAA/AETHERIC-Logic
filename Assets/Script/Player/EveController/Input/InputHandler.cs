@@ -54,6 +54,7 @@ namespace EveController
             aimTrigger = Input.GetButton("Fire2");
 
             attackTrigger = Input.GetButtonDown("Fire1");
+            DebugCheck(attackTrigger);
             secondaryAttackTrigger = Input.GetButtonDown("Fire2");
             specialAttackTrigger = Input.GetButtonDown("Fire3");
             crouchInput = Input.GetButtonDown("Crouch");

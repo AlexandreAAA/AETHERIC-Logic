@@ -6358,6 +6358,7 @@ GameObject:
   - component: {fileID: 1354881670}
   - component: {fileID: 1354881672}
   - component: {fileID: 1354881671}
+  - component: {fileID: 1354881675}
   - component: {fileID: 1354881673}
   - component: {fileID: 1354881674}
   m_Layer: 7
@@ -6465,10 +6466,25 @@ MonoBehaviour:
   rigidBody: {fileID: 0}
   anim: {fileID: 0}
   playerInput: {fileID: 0}
-  capsCollider: {fileID: 0}
+  capsCollider: {fileID: 1354881671}
+  stealthCollider: {fileID: 1354881675}
   isrunning: 0
   isGrounded: 0
   isCrouching: 0
+--- !u!136 &1354881675
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354881669}
+  m_Material: {fileID: 13400000, guid: 103a15d992e0c764e94c8d7d0c79bfc6, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.2770164
+  m_Height: 0.9627475
+  m_Direction: 1
+  m_Center: {x: -0.008267403, y: 0.687778, z: 0}
 --- !u!1 &1376737636
 GameObject:
   m_ObjectHideFlags: 0

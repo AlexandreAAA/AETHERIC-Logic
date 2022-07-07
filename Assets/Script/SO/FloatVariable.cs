@@ -5,8 +5,8 @@ using UnityEngine;
 namespace EveController
 {
     [CreateAssetMenu]
-    public class StateDataContainer : ScriptableObject
+    public class FloatVariable : ScriptableObject
     {
-        public ScriptableObject[] stateDatas;
+        public float value;
     }
 }
