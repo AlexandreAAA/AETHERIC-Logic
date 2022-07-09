@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9252bb138dcf3e47aa9b0ffa53e9420, type: 3}
   m_Name: Time To Drop Combo
   m_EditorClassIdentifier: 
-  value: 0
+  value: 0.7

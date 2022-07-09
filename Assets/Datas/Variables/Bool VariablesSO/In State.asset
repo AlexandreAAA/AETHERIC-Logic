@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27bdaa37a06467540ae379264517bd9f, type: 3}
-  m_Name: Is Combo Drop SO
+  m_Script: {fileID: 11500000, guid: fbc144d2c98626441b5441b995d0339c, type: 3}
+  m_Name: In State
   m_EditorClassIdentifier: 
-  comboTime: {fileID: 11400000, guid: 316bfae24393c384ba5c82d36bc7bebe, type: 2}
+  value: 0

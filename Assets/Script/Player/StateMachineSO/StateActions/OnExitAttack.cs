@@ -11,6 +11,7 @@ namespace EveController
         public override void Execute(StateController controller)
         {
             controller.isComboing = false;
+            controller.anim.ResetTrigger("Attack");
             controller.anim.SetBool("IsCombo", controller.isComboing);
             controller.mouvementVariable.lookRotation = Quaternion.RotateTowards(
                                                         controller.rigidBody.rotation, 
