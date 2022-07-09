@@ -23,8 +23,9 @@ namespace EveController
         public bool isGrounded;
         public bool isCrouching;
         public bool isRolling;
-        public bool isComboing;
+        public bool isInCover;
         public bool isCasting;
+        public bool isComboing;
         public bool castingAttack;
         public bool isJumping;
         #endregion
