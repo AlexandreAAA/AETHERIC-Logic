@@ -32,3 +32,11 @@ MonoBehaviour:
     condition: {fileID: 11400000, guid: 03f70664faac197428d68ef4729b73c1, type: 2}
     targetState: {fileID: 11400000, guid: a82a1f36e401ca0489b9d53de43fc021, type: 2}
     disable: 0
+  - id: 1
+    condition: {fileID: 11400000, guid: 85c759128ae8bea478a6f7339334553e, type: 2}
+    targetState: {fileID: 11400000, guid: b4a8f04fe8c601a45af1165d6a2682e1, type: 2}
+    disable: 0
+  - id: 2
+    condition: {fileID: 11400000, guid: 3ac12f168f1afd747ae144db9bfd0da9, type: 2}
+    targetState: {fileID: 11400000, guid: 2e9b23d01e723ef4b8f9ae883ba9ca57, type: 2}
+    disable: 0
