@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17c15d2d4de11434bb83c8368f9230dc, type: 3}
   m_Name: On Enter Attack
   m_EditorClassIdentifier: 
-  comboTime: {fileID: 0}
-  timeToDropCombo: 0
+  comboTime: {fileID: 11400000, guid: 316bfae24393c384ba5c82d36bc7bebe, type: 2}
+  timeToDropCombo: {fileID: 11400000, guid: abe329c20e542a84a90010c794044c26, type: 2}

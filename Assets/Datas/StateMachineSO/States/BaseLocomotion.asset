@@ -29,3 +29,15 @@ MonoBehaviour:
     condition: {fileID: 11400000, guid: 03f70664faac197428d68ef4729b73c1, type: 2}
     targetState: {fileID: 11400000, guid: 116f9bdc7dd43744786bf76898269b57, type: 2}
     disable: 0
+  - id: 1
+    condition: {fileID: 11400000, guid: 4aa386b0efbb44f4586215cd92619d27, type: 2}
+    targetState: {fileID: 11400000, guid: 9bb1f96f9bb8bb94faeb6a9852999056, type: 2}
+    disable: 0
+  - id: 2
+    condition: {fileID: 11400000, guid: 85c759128ae8bea478a6f7339334553e, type: 2}
+    targetState: {fileID: 11400000, guid: e31eb853471b5a1438b155c684f18f9f, type: 2}
+    disable: 1
+  - id: 2
+    condition: {fileID: 11400000, guid: 85c759128ae8bea478a6f7339334553e, type: 2}
+    targetState: {fileID: 11400000, guid: a7145b345317ff0449983beb16588347, type: 2}
+    disable: 0
