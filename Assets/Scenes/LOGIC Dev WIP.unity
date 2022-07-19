@@ -6696,7 +6696,7 @@ PrefabInstance:
     - target: {fileID: 2322034421401232431, guid: e5e2298a8fd330d498c30d06815d8e67,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2322034421401232431, guid: e5e2298a8fd330d498c30d06815d8e67,
         type: 3}
@@ -6795,7 +6795,7 @@ Transform:
   m_Children:
   - {fileID: 271541475}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &1354881671
 CapsuleCollider:
@@ -6913,7 +6913,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354881669}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13a16ee3875fc194c81f27a6e45c5f7d, type: 3}
   m_Name: 
@@ -7135,7 +7135,7 @@ Transform:
   - {fileID: 442377745}
   - {fileID: 2109317028}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1466655594
 GameObject:
@@ -12089,7 +12089,7 @@ PrefabInstance:
     - target: {fileID: 6335203953353912343, guid: bb92511370cae4742b4954c8ea3e4b5f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6335203953353912343, guid: bb92511370cae4742b4954c8ea3e4b5f,
         type: 3}
@@ -12430,7 +12430,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2096165103
 Transform:
   m_ObjectHideFlags: 0
@@ -12447,7 +12447,7 @@ Transform:
   - {fileID: 1014634968}
   - {fileID: 806573493}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2109317026
 GameObject:
@@ -14714,7 +14714,7 @@ Transform:
   m_Children:
   - {fileID: 4315254043531707372}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &6541375070891874721
 Transform:
