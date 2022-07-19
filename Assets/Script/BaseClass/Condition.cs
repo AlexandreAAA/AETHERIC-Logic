@@ -4,19 +4,8 @@ using UnityEngine;
 
 namespace EveController
 {
-
-    public class Condition : MonoBehaviour
+    public abstract class Condition : ScriptableObject
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        public abstract bool CheckCondition(StateController controller);
     }
 }
