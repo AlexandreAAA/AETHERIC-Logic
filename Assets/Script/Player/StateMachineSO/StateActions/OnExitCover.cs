@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnExitCover : MonoBehaviour
+namespace EveController
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(menuName ="State Actions/OnExitCover")]
+    public class OnExitCover : StateAction
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public override void Execute(StateController controller)
+        {
+            controller.isInCover = false;
+            controller.anim.SetBool("TakeCover", controller.isInCover);
+        }
     }
 }

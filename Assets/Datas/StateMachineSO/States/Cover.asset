@@ -14,11 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onEnter:
   - {fileID: 11400000, guid: f0ea86702af35cf4a9962acaf3a78d04, type: 2}
-  onUpdate: []
-  onFixedUpdate: []
-  onExit: []
+  onUpdate:
+  - {fileID: 11400000, guid: 91b850b53fb41a54799e00f491698e9f, type: 2}
+  - {fileID: 11400000, guid: 1565a5df7821514439b6d638e22c2055, type: 2}
+  - {fileID: 11400000, guid: ee05f94e3b7afa34aa5931a44c05cfc4, type: 2}
+  onFixedUpdate:
+  - {fileID: 11400000, guid: cd2893b2d92eb6740ad0f573510be8fa, type: 2}
+  onExit:
+  - {fileID: 11400000, guid: e41ec1e41274a7345892ad8306906166, type: 2}
   transitions:
-  - id: 0
+  - id: 1
     condition: {fileID: 11400000, guid: 4aa386b0efbb44f4586215cd92619d27, type: 2}
     targetState: {fileID: 11400000, guid: 116f9bdc7dd43744786bf76898269b57, type: 2}
     disable: 0
