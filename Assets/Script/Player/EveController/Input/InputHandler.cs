@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace EveController
 {
-
     public class InputHandler : MonoBehaviour
     {
         #region Exposed
@@ -54,7 +53,6 @@ namespace EveController
             aimTrigger = Input.GetButton("Fire2");
 
             attackTrigger = Input.GetButtonDown("Fire1");
-            DebugCheck(attackTrigger);
             secondaryAttackTrigger = Input.GetButtonDown("Fire2");
             specialAttackTrigger = Input.GetButtonDown("Fire3");
             crouchInput = Input.GetButtonDown("Crouch");
@@ -63,7 +61,6 @@ namespace EveController
             interact = Input.GetButtonDown("Interact");
             cameraRotateLeft = Input.GetButtonDown("CameraLeft");
             cameraRotateRight = Input.GetButtonDown("CameraRight");
-
         }
 
         private void DebugCheck(bool input)

@@ -16,9 +16,9 @@ namespace EveController
         {
             //moveX = controller.playerInput.horizontal;
 
-            Vector3 velocity =controller.mTransform.InverseTransformVector (controller.rigidBody.velocity);
+            Vector3 velocity = controller.mTransform.InverseTransformVector(controller.rigidBody.velocity);
             float veloX = Mathf.Clamp(velocity.x, -1, 1);
-            
+
             moveX = veloX * controller.mouvementVariable.moveAmount;
 
             if (moveX <= -0.1f)
@@ -29,7 +29,6 @@ namespace EveController
             {
                 left = false;
             }
-
 
             if (controller.mouvementVariable.moveAmount < 0.1)
             {
@@ -43,16 +42,14 @@ namespace EveController
                 }
             }
 
-            if (leftEdge.value == true )
+            if (leftEdge.value)
             {
                 moveX = Mathf.Lerp(moveX, -0.1f, smooth * Time.deltaTime);
             }
-            else if (rightEdge.value == true)
+            else if (rightEdge.value)
             {
                 moveX = Mathf.Lerp(moveX, 0.1f, smooth * Time.deltaTime);
             }
-            
-
             controller.anim.SetFloat("MoveX", moveX);
         }
     }
