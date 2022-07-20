@@ -2,23 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TransformCheckDebug : MonoBehaviour
+namespace EveController
 {
-    public Vector3 vectorToCheck;
-    public Vector3 vectorTocheckInverse;
-    public Vector3 vectorToCheckTransformVector;
-    private Transform m_transform;
-
-    private void Start()
+    public class TransformCheckDebug : MonoBehaviour
     {
-        m_transform = this.transform;
+        public Vector3 vectorToCheck;
+        public Vector3 moveDir;
+        public float dotProd;
+        private Transform m_transform;
+        private StateController controller;
 
-    }
+        private void Start()
+        {
+            m_transform = this.transform;
+            controller = GetComponent<StateController>();
+        }
 
-    private void Update()
-    {
-        vectorToCheck = m_transform.right;
-        vectorTocheckInverse = m_transform.InverseTransformVector(vectorToCheck);
-        vectorToCheckTransformVector = m_transform.TransformVector(vectorToCheck);
+        private void Update()
+        {
+            vectorToCheck = m_transform.right;
+            moveDir = controller.mouvementVariable.moveDirection;
+            dotProd = Mathf.Clamp(Vector3.Dot(vectorToCheck, moveDir), - 1, 1);
+        }
     }
 }
