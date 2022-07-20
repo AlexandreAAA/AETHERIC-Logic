@@ -9,11 +9,17 @@ namespace EveController
     {
         public BoolVariable leftEdge;
         public BoolVariable rightEdge;
+        public float smooth;
         private float moveX;
         public bool left;
         public override void Execute(StateController controller)
         {
-            moveX = controller.playerInput.horizontal;
+            //moveX = controller.playerInput.horizontal;
+
+            Vector3 velocity =controller.mTransform.InverseTransformVector (controller.rigidBody.velocity);
+            float veloX = Mathf.Clamp(velocity.x, -1, 1);
+            
+            moveX = veloX * controller.mouvementVariable.moveAmount;
 
             if (moveX <= -0.1f)
             {
@@ -36,6 +42,16 @@ namespace EveController
                     moveX = 0.1f;
                 }
             }
+
+            if (leftEdge.value == true )
+            {
+                moveX = Mathf.Lerp(moveX, -0.1f, smooth * Time.deltaTime);
+            }
+            else if (rightEdge.value == true)
+            {
+                moveX = Mathf.Lerp(moveX, 0.1f, smooth * Time.deltaTime);
+            }
+            
 
             controller.anim.SetFloat("MoveX", moveX);
         }

@@ -113,7 +113,6 @@ public class PlayerCrouch : MonoBehaviour
             }
             else // Normal Input
             {
-                //_crouchInput = (_cameraTransform.right * _xHorizontal + _cameraTransform.forward * _zVertical).normalized;
                 _crouchInput = new Vector3(Input.GetAxis("Horizontal"), _orientationInput.y, Input.GetAxis("Vertical")).normalized;
                 _crouchInput.y = 0f;
             }
@@ -174,11 +173,6 @@ public class PlayerCrouch : MonoBehaviour
         {
             _canCover = false;
         }
-    }
-
-    private void OnGUI()
-    {
-        //GUILayout.Button(_currentState.ToString());
     }
 
     #endregion
@@ -301,20 +295,17 @@ public class PlayerCrouch : MonoBehaviour
     {
         if (_isCrouch)
         {
-            //_eveRigidbody.velocity = new Vector3(_crouchInput.x * _currentCrouchSpeed, _eveRigidbody.velocity.y, _crouchInput.z * _currentCrouchSpeed);
-            //_eveRigidbody.velocity = new Vector3(_mouvement.x * _currentCrouchSpeed, _eveRigidbody.velocity.y, _mouvement.z *_currentCrouchSpeed );
+            
             _playerController.RigidBodyApply();
 
             if (_inCover)
             {
                 if (m_coverLeftEdge && Input.GetAxis("Horizontal") < 0)
                 {
-                    //_eveRigidbody.velocity = new Vector3(0, _eveRigidbody.velocity.y, _eveRigidbody.velocity.z);
                     _eveRigidbody.constraints = _coverEdgeConstraint;
                 }
                 else if (m_coverRightEdge && Input.GetAxis("Horizontal") > 0)
                 {
-                    //_eveRigidbody.velocity = new Vector3(0, _eveRigidbody.velocity.y, _eveRigidbody.velocity.z);
                     _eveRigidbody.constraints = _coverEdgeConstraint;
                 }
                 else
@@ -355,15 +346,10 @@ public class PlayerCrouch : MonoBehaviour
 
             if (Physics.Raycast(_ray, out _hit, _rayCastLength, _coverLayer) && _canCover)
             {
-                //Debug.Log("Ray Hit: " + _hit.transform.name);
-                //Debug.Log(_hit.normal);
-
                 Vector3 _coverPos = _hit.point + _hit.normal * 0.3f;
                 _eveRigidbody.MovePosition(new Vector3(_coverPos.x, transform.position.y, _coverPos.z));
                 Quaternion _toRotation = Quaternion.LookRotation(-_hit.normal);
                 _coverRotation = _toRotation;
-
-                //transform.forward = -_hit.normal;
 
                 _inCover = true;
                 _eveAnimator.SetBool("TakeCover", _inCover);
