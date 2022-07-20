@@ -11,8 +11,9 @@ namespace EveController
         public BoolVariable leftEdgeCheck, rightEdgeCheck;
         public bool LeftCheck, rightCheck;
         public float coverSpeed;
-        private Vector3 camFwd, camRight, fwdRelInput, rightRelInput, targetDir;
-        private float h, v;
+
+        private Vector3 camFwd, camRight, fwdRelInput, rightRelInput, targetDir, velocity;
+        private float h, v, veloX;
 
         public override void Execute(StateController controller)
         {
@@ -38,8 +39,11 @@ namespace EveController
             targetDir = controller.mTransform.TransformDirection(targetDir);
             targetDir.Normalize();
 
+
+
             if (LeftCheck && h < 0)
             {
+                
                 controller.mouvementVariable.currentSpeed = 0;
             }
             else if (rightCheck && h > 0)
@@ -50,8 +54,6 @@ namespace EveController
             {
                 controller.mouvementVariable.currentSpeed = coverSpeed;
             }
-
-
 
             controller.mouvementVariable.moveAmount = moveAmount;
             controller.mouvementVariable.moveDirection = targetDir;
