@@ -51,6 +51,7 @@ namespace EveController
             walkInput = Input.GetButton("Walk");
             jumpInput = Input.GetButton("Jump");
             aimTrigger = Input.GetButton("Fire2");
+            //DebugCheck(aimTrigger);
 
             attackTrigger = Input.GetButtonDown("Fire1");
             secondaryAttackTrigger = Input.GetButtonDown("Fire2");
