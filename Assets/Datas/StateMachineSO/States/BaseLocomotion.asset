@@ -35,9 +35,9 @@ MonoBehaviour:
     disable: 0
   - id: 2
     condition: {fileID: 11400000, guid: 85c759128ae8bea478a6f7339334553e, type: 2}
-    targetState: {fileID: 11400000, guid: e31eb853471b5a1438b155c684f18f9f, type: 2}
-    disable: 1
-  - id: 2
-    condition: {fileID: 11400000, guid: 85c759128ae8bea478a6f7339334553e, type: 2}
     targetState: {fileID: 11400000, guid: a7145b345317ff0449983beb16588347, type: 2}
+    disable: 0
+  - id: 3
+    condition: {fileID: 11400000, guid: 61e417d74f81fb147b5880c172b9c2cd, type: 2}
+    targetState: {fileID: 11400000, guid: 96d119fe904c0224f94d2fd923126747, type: 2}
     disable: 0

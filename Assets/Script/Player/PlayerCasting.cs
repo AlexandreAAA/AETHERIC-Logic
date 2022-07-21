@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public enum CastingState
 {
     NOCASTSTATE,
@@ -12,7 +11,6 @@ public enum CastingState
 }
 public class PlayerCasting : MonoBehaviour
 {
-    
     #region Exposed
 
     public PlayerController m_playerController;
@@ -46,26 +44,16 @@ public class PlayerCasting : MonoBehaviour
 
     #endregion
 
-
     #region Unity API
 
     private void Awake()
     {
         m_playerController = GetComponent<PlayerController>();
-        _eveRigidbody = GetComponent<Rigidbody>();
         _eveAnimator = GetComponentInChildren<Animator>();
         _mainCamera = Camera.main;
-        
-        
     }
 
-    void Start()
-    {
-        
-    }
-
-    
-    void Update()
+    private void Update()
     {
         m_isCasting = m_playerController.m_isCasting;
 
@@ -73,7 +61,6 @@ public class PlayerCasting : MonoBehaviour
         {
             //Change Mouse Cursor
             ManageCursor(_castingCursor);
-            
 
             //Direction Input
             float _xHorizontal = Input.GetAxis("Horizontal");
@@ -98,33 +85,22 @@ public class PlayerCasting : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 _eveAnimator.SetTrigger("Fireball");
-                
                 //FireBall();
             }
         }
 
         OnStateUpdate();
-        
 
         UpdateAnimator();
     }
 
-    private void OnGUI()
-    {
-        //GUILayout.Button(_currentState.ToString());
-    }
-
     private void FixedUpdate()
     {
-
-
         //_eveRigidbody.velocity = new Vector3(_castingDirectionInput.x * m_castingSpeed, _eveRigidbody.velocity.y, _castingDirectionInput.z * m_castingSpeed);
         m_playerController.RigidBodyApply();
-        
     }
 
     #endregion
-
 
     #region Main Method
 
@@ -154,7 +130,6 @@ public class PlayerCasting : MonoBehaviour
                 break;
         }
     }
-
 
     private void OnStateUpdate()
     {
@@ -188,7 +163,7 @@ public class PlayerCasting : MonoBehaviour
                 if (Input.GetButtonDown("Fire1"))
                 {
                     _attackTime = m_timeBeforeNextAttack;
-                    _eveAnimator.SetTrigger("Fireball");      
+                    _eveAnimator.SetTrigger("Fireball");
                 }
 
                 if (_attackTime < 0f)
@@ -247,8 +222,6 @@ public class PlayerCasting : MonoBehaviour
         Destroy(_clone, _fireballDeathTime);
     }
 
-
-
     // A ETUDIER Animator Parameters for twinstick
     private void UpdateAnimator()
     {
@@ -262,7 +235,6 @@ public class PlayerCasting : MonoBehaviour
             forwardBackwardsMagnitude = Mathf.Clamp( Vector3.Dot(_castingDirectionInput, normalizedLookingAt), -1, 1);
 
             Vector3 perpendicularLookingAt = new Vector3( normalizedLookingAt.z, 0, -normalizedLookingAt.x);
-            
             rightLeftMagnitude = Mathf.Clamp( Vector3.Dot(_castingDirectionInput, perpendicularLookingAt), -1, 1);
 
             _eveAnimator.SetBool("IsMoving", true);
@@ -278,18 +250,14 @@ public class PlayerCasting : MonoBehaviour
     }
     #endregion
 
-
     #region Privates
 
     private CastingState _currentState;
 
-    private Rigidbody _eveRigidbody;
     private Animator _eveAnimator;
     private Camera _mainCamera;
 
     private Vector3 _castingDirectionInput;
-    private Vector3 _castingOrientationInput;
-    private Quaternion _castingLookRotation;
     public Vector3 _lookedAtPoint;
 
     #endregion
