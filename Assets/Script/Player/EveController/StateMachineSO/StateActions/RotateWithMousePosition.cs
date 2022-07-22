@@ -20,18 +20,14 @@ namespace EveController
                 Debug.DrawRay(_mouseRay.origin, _mouseRay.direction * 100f, Color.green);
             }
 
-            RaycastHit _hit;
-            if (Physics.Raycast(mainCam.value.ScreenPointToRay(Input.mousePosition), out _hit, 100, targetingLayer))
+            if (Physics.Raycast(mainCam.value.ScreenPointToRay(Input.mousePosition), out RaycastHit _hit, 100, targetingLayer))
             {
                 lookAtPoint.value = _hit.point;
                 Vector3 _lookdirection = _hit.point - controller.mTransform.position;
-                Debug.Log(_hit.point);
                 _lookdirection.y = 0f;
                 _lookdirection.Normalize();
 
                 controller.mouvementVariable.lookRotation = Quaternion.LookRotation(_lookdirection);
-
-                //controller.mTransform.forward = _lookdirection;
             }
         }
     }

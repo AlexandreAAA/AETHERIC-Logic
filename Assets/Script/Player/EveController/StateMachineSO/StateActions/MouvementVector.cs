@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace EveController
 {
-
     [CreateAssetMenu(menuName = "State Actions/Mouvement Vector")]
     public class MouvementVector : StateAction
     {
@@ -23,8 +22,6 @@ namespace EveController
             v = controller.playerInput.vertical;
             float moveAmount = Mathf.Clamp01(Mathf.Abs(h) + Mathf.Abs(v));
 
-
-
             camFwd = camTransform.value.forward;
             camRight = camTransform.value.right;
             camFwd.y = 0;
@@ -38,7 +35,6 @@ namespace EveController
 
             if (isAxisConstraint)
             {
-
                 targetDir = controller.mTransform.InverseTransformDirection(targetDir);
 
                 switch (axisToConstraint)
