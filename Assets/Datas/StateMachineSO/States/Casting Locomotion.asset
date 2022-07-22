@@ -28,3 +28,7 @@ MonoBehaviour:
     condition: {fileID: 11400000, guid: 75f377d876cf13140a9524cec48407d9, type: 2}
     targetState: {fileID: 11400000, guid: a82a1f36e401ca0489b9d53de43fc021, type: 2}
     disable: 0
+  - id: 1
+    condition: {fileID: 11400000, guid: 85c759128ae8bea478a6f7339334553e, type: 2}
+    targetState: {fileID: 11400000, guid: 346937a948433804481f1d671e2635da, type: 2}
+    disable: 0

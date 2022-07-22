@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace EveController
 {
-
     public class TransformVariableAssign : MonoBehaviour
     {
         public TransformVariable _transform;

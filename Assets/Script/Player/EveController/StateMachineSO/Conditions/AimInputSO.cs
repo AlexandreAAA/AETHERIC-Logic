@@ -10,17 +10,7 @@ namespace EveController
         public bool isEnter;
         public override bool CheckCondition(StateController controller)
         {
-            bool retval = false;
-
-            if (isEnter)
-            {
-                retval = controller.playerInput.aimTrigger;
-            }
-            else
-            {
-                retval = !controller.playerInput.aimTrigger;
-            }
-            
+            bool retval = isEnter ? controller.playerInput.aimTrigger : !controller.playerInput.aimTrigger;
             return retval;
         }
     }

@@ -21,15 +21,15 @@ public class PlayerCasting : MonoBehaviour
     [SerializeField]
     private GameObject _fireBallPrefab;
     [SerializeField]
-    private Transform _launcher;
+    private readonly Transform _launcher;
     public GameObject _fireBall;
     [SerializeField]
     private float _attackTime;
     public float m_timeBeforeNextAttack;
     [SerializeField]
-    private float _projectileSpeed;
+    private readonly float _projectileSpeed;
     [SerializeField]
-    private float _fireballDeathTime = 5f;
+    private readonly float _fireballDeathTime = 5f;
     [SerializeField]
     private LayerMask _targetingLayer;
 
@@ -68,12 +68,7 @@ public class PlayerCasting : MonoBehaviour
 
             //_castingDirectionInput = (_mainCamera.transform.right * _xHorizontal + _mainCamera.transform.forward * _zVertical).normalized;
             _castingDirectionInput = new Vector3(_xHorizontal, 0, _zVertical).normalized;
-
-            //Orientation Input = direction to mouse position
-            Ray _mouseRay = _mainCamera.ScreenPointToRay(Input.mousePosition);
-            Debug.DrawRay(_mouseRay.origin, _mouseRay.direction * 100f, Color.green);
-            RaycastHit _hit;
-            if (Physics.Raycast(_mainCamera.ScreenPointToRay(Input.mousePosition), out _hit, 100, _targetingLayer))
+            if (Physics.Raycast(_mainCamera.ScreenPointToRay(Input.mousePosition), out RaycastHit _hit, 100, _targetingLayer))
             {
                 _lookedAtPoint = _hit.point;
                 Vector3 _lookdirection = _hit.point - transform.position;
@@ -96,7 +91,6 @@ public class PlayerCasting : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //_eveRigidbody.velocity = new Vector3(_castingDirectionInput.x * m_castingSpeed, _eveRigidbody.velocity.y, _castingDirectionInput.z * m_castingSpeed);
         m_playerController.RigidBodyApply();
     }
 
