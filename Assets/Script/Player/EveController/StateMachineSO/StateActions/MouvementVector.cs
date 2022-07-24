@@ -21,6 +21,7 @@ namespace EveController
             h = controller.playerInput.horizontal;
             v = controller.playerInput.vertical;
             float moveAmount = Mathf.Clamp01(Mathf.Abs(h) + Mathf.Abs(v));
+            controller.isrunning = moveAmount > 0.1f;
 
             camFwd = camTransform.value.forward;
             camRight = camTransform.value.right;
@@ -65,7 +66,7 @@ namespace EveController
             }
 
             controller.mouvementVariable.moveAmount = moveAmount;
-            controller.mouvementVariable.moveDirection = targetDir;
+            controller.mouvementVariable.moveDirection = targetDir * moveAmount;
         }
     }
 }

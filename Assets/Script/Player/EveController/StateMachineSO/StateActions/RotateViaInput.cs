@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace EveController
 {
-    [CreateAssetMenu(menuName ="State Actions/ Rotate Via Input")]
+    [CreateAssetMenu(menuName = "State Actions/ Rotate Via Input")]
     public class RotateViaInput : StateAction
     {
         public TransformVariable cameraTransform;
@@ -19,7 +19,7 @@ namespace EveController
             float h = controller.playerInput.horizontal;
             float v = controller.playerInput.vertical;
 
-            Vector3 targetdir =  cameraTransform.value.forward * v;
+            Vector3 targetdir = cameraTransform.value.forward * v;
             targetdir += cameraTransform.value.right * h;
             targetdir.y = 0;
             targetdir.Normalize();

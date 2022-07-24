@@ -1,12 +1,10 @@
 using UnityEngine;
 
-
 namespace EveController
 {
     [CreateAssetMenu (menuName ="State Actions/ MoveViaInput")]
     public class MoveViaInput : StateAction
     {
-        
         public override void Execute(StateController controller)
         {
             float h = controller.playerInput.horizontal;
@@ -28,10 +26,7 @@ namespace EveController
             controller.anim.SetFloat("DirMag", moveAmount);
             controller.anim.SetBool("IsRunning", controller.isrunning);
 
-            controller.mouvementVariable.forwardVector = controller.mTransform.forward * controller.mouvementVariable.moveAmount
-                                        * controller.mouvementVariable.currentSpeed * Time.fixedDeltaTime;
-
-
+            controller.mouvementVariable.forwardVector = controller.mouvementVariable.currentSpeed * controller.mouvementVariable.moveAmount * Time.fixedDeltaTime * controller.mTransform.forward;
         }
     }
 }

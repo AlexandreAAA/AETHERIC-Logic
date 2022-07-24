@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Crouch Locomotion
   m_EditorClassIdentifier: 
   onEnter:
-  - {fileID: 11400000, guid: f10486765c59aea4cb35371dd63e5094, type: 2}
-  - {fileID: 11400000, guid: c78d7d6c9a1483e40bbefe27b052eaf8, type: 2}
+  - {fileID: 11400000, guid: 24e65cf6e3b301248811addeb7b6cbe0, type: 2}
   - {fileID: 11400000, guid: 36947ba6b7bc7bf46a12e68030c61858, type: 2}
   onUpdate:
   - {fileID: 11400000, guid: 1ffbf091873ef2d46b6c6c0972ec77bd, type: 2}
@@ -25,7 +24,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 410fb9ba7fba0b0428bc9070593adc8d, type: 2}
   - {fileID: 11400000, guid: 539bb0a1968f4ae4dabdb702e397eabc, type: 2}
   onExit:
-  - {fileID: 11400000, guid: faf5b41e9ad20c7459b140463dd283ff, type: 2}
+  - {fileID: 11400000, guid: 68ba8a14d3e58ed419771249004d4f84, type: 2}
   - {fileID: 11400000, guid: 81002fcedfbdfc24f910b0ffb7ba1f19, type: 2}
   transitions:
   - id: 0

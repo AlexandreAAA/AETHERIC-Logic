@@ -50,6 +50,11 @@ namespace EveController
             switch (selectedState)
             {
                 case LocomotionState.Base:
+                    if (isEnterOrExit == ActionType.IsExit)
+                    {
+                        controller.isrunning = state;
+                        anim.SetBool("IsRunning", controller.isrunning);
+                    }
                     break;
                 case LocomotionState.Crouch:
                     controller.isCrouching = state;

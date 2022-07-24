@@ -26,12 +26,9 @@ namespace EveController
                     Debug.DrawRay(_ray.origin, _ray.direction * rayCastLength, Color.green);
                 }
 
-                RaycastHit _hit;
-
-                if (Physics.Raycast(_ray, out _hit, rayCastLength, coverLayer))
+                if (Physics.Raycast(_ray, out RaycastHit _hit, rayCastLength, coverLayer))
                 {
                     coverPosition.value = _hit.point + (_hit.normal * offset);
-                    controller.rigidBody.MovePosition(new Vector3(coverPosition.value.x, controller.mTransform.position.y, coverPosition.value.z));
                     Quaternion _toRotation = Quaternion.LookRotation(-_hit.normal);
                     coverRotation.value = _toRotation;
                     retval = true;

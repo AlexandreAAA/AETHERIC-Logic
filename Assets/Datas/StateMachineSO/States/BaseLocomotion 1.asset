@@ -10,18 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21b1cb88d0688fe43871b95ee873b242, type: 3}
-  m_Name: BaseLocomotion
+  m_Name: BaseLocomotion 1
   m_EditorClassIdentifier: 
   onEnter:
   - {fileID: 11400000, guid: d9d218220b491424bad69569fda1d8de, type: 2}
   onUpdate:
   - {fileID: 11400000, guid: 1ffbf091873ef2d46b6c6c0972ec77bd, type: 2}
-  - {fileID: 11400000, guid: f44179d90e86c0c479cc4497168471d9, type: 2}
-  - {fileID: 11400000, guid: 39645c532ad763340acb6b51853880e5, type: 2}
+  - {fileID: 11400000, guid: 320160e4da94c3340adb5e59fa50e3cb, type: 2}
   onFixedUpdate:
-  - {fileID: 11400000, guid: daa1831a95e89384fb7e0fb9b37d8c17, type: 2}
-  - {fileID: 11400000, guid: 410fb9ba7fba0b0428bc9070593adc8d, type: 2}
-  - {fileID: 11400000, guid: 539bb0a1968f4ae4dabdb702e397eabc, type: 2}
+  - {fileID: 0}
   onExit:
   - {fileID: 11400000, guid: a55efde559287ad4cad6ad8e58a0d058, type: 2}
   transitions:

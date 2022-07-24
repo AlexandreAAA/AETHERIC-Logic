@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Cover
   m_EditorClassIdentifier: 
   onEnter:
-  - {fileID: 11400000, guid: f0ea86702af35cf4a9962acaf3a78d04, type: 2}
+  - {fileID: 11400000, guid: e25d765f1be4ccb4bb50e734761c244f, type: 2}
+  - {fileID: 11400000, guid: d48626c1ff2e5d94da3ddbd9d14e8f03, type: 2}
   onUpdate:
   - {fileID: 11400000, guid: 1565a5df7821514439b6d638e22c2055, type: 2}
   - {fileID: 11400000, guid: 9bc5dfae3fccd3545bfb81cb39a9cbfa, type: 2}
@@ -21,7 +22,7 @@ MonoBehaviour:
   onFixedUpdate:
   - {fileID: 11400000, guid: cd2893b2d92eb6740ad0f573510be8fa, type: 2}
   onExit:
-  - {fileID: 11400000, guid: e41ec1e41274a7345892ad8306906166, type: 2}
+  - {fileID: 11400000, guid: 87a7ac922cfe70541876c85daca329d3, type: 2}
   transitions:
   - id: 1
     condition: {fileID: 11400000, guid: 4aa386b0efbb44f4586215cd92619d27, type: 2}
