@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a12bfaf46c8569b44bc922d55a29dbcc, type: 3}
-  m_Name: On Exit Casting
+  m_Name: On Enter Casting Locomotion
   m_EditorClassIdentifier: 
   selectedState: 8
-  isEnterOrExit: 2
+  isEnterOrExit: 1
   speedState: {fileID: 11400000, guid: 1c52e656badee5c47ad2d7503b72dd60, type: 2}

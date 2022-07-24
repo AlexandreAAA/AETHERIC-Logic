@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a12bfaf46c8569b44bc922d55a29dbcc, type: 3}
-  m_Name: On Enter Casting
+  m_Script: {fileID: 11500000, guid: 4f37078ecb4361f488d71f87ee88a087, type: 3}
+  m_Name: Base Mouvement Vector
   m_EditorClassIdentifier: 
-  selectedState: 8
-  isEnterOrExit: 1
-  speedState: {fileID: 11400000, guid: 1c52e656badee5c47ad2d7503b72dd60, type: 2}
+  camTransform: {fileID: 11400000, guid: 178fe505ae1b7fb4cab5932236adc25a, type: 2}
+  isAxisConstraint: 0
+  axisToConstraint: 0

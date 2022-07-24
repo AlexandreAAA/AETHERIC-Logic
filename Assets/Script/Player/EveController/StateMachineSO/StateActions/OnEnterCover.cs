@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace EveController
@@ -16,6 +14,5 @@ namespace EveController
             controller.rigidBody.rotation = coverRotation.value;
             controller.anim.SetBool("TakeCover", controller.isInCover);
         }
-
     }
 }
