@@ -21,15 +21,15 @@ public class PlayerCasting : MonoBehaviour
     [SerializeField]
     private GameObject _fireBallPrefab;
     [SerializeField]
-    private readonly Transform _launcher;
+    private Transform _launcher;
     public GameObject _fireBall;
     [SerializeField]
     private float _attackTime;
     public float m_timeBeforeNextAttack;
     [SerializeField]
-    private readonly float _projectileSpeed;
+    private float _projectileSpeed;
     [SerializeField]
-    private readonly float _fireballDeathTime = 5f;
+    private float _fireballDeathTime = 5f;
     [SerializeField]
     private LayerMask _targetingLayer;
 
@@ -212,7 +212,7 @@ public class PlayerCasting : MonoBehaviour
     {
         GameObject _clone = Instantiate(_fireBallPrefab, _launcher.position, transform.rotation);
         GoForward _goForward = _clone.GetComponent<GoForward>();
-        _goForward._setFireballSpeed(_projectileSpeed);
+        _goForward.SetFireballSpeed(_projectileSpeed);
         Destroy(_clone, _fireballDeathTime);
     }
 

@@ -777,7 +777,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: State Time
-    m_EventTreshold: 0.4
+    m_EventTreshold: 0.5
   - m_ConditionMode: 4
     m_ConditionEvent: State Time
     m_EventTreshold: 1
@@ -2453,7 +2453,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: State Time
-    m_EventTreshold: 0.25
+    m_EventTreshold: 0.4
   - m_ConditionMode: 4
     m_ConditionEvent: State Time
     m_EventTreshold: 1
@@ -2488,7 +2488,7 @@ AnimatorState:
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
-  m_Mirror: 0
+  m_Mirror: 1
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
@@ -4082,14 +4082,14 @@ AnimatorStateMachine:
   - {fileID: -1790139703914534412}
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: -5644489152157424265}
-    second:
-    - {fileID: -6735789895489292047}
   - first: {fileID: -7942958538341728546}
     second: []
   - first: {fileID: -4140967721979848432}
     second:
     - {fileID: -2893964023040082405}
+  - first: {fileID: -5644489152157424265}
+    second:
+    - {fileID: -6735789895489292047}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 460, y: 60, z: 0}
   m_EntryPosition: {x: -330, y: -140, z: 0}

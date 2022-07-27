@@ -73,7 +73,7 @@ ModelImporter:
     keepQuads: 0
     weldVertices: 1
     bakeAxisConversion: 0
-    preserveHierarchy: 0
+    preserveHierarchy: 1
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
@@ -585,7 +585,8 @@ ModelImporter:
     - name: Spine
       parentName: Hips
       position: {x: -0.00009024236, y: 0.07062584, z: -0.009846828}
-      rotation: {x: -4.6504278e-20, y: 0.0000000010039103, z: -0.000000031872194, w: 1}
+      rotation: {x: -4.6504278e-20, y: 0.0000000010039103, z: -0.000000031872194,
+        w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Spine1
       parentName: Spine

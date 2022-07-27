@@ -5,27 +5,16 @@ using UnityEngine;
 public class IK : MonoBehaviour
 {
     #region Exposed
-
-    [SerializeField]
-    private Transform _lookAtTarget;
-
     public float _ankleHeight = 0.15f;
     public float _ankleOffset = 0.25f;
     public float _rayCastFloorLength = 0.4f;
     public float m_ikWeightLeft;
     public float m_ikWeightRight;
-
     #endregion
 
-    void Start()
+    private void Start()
     {
         _eveAnimator = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnAnimatorIK(int layerIndex)
@@ -42,7 +31,7 @@ public class IK : MonoBehaviour
             {
                 Vector3 _leftFootPosition = new Vector3(_hitInfo.point.x, _hitInfo.point.y + _ankleHeight, _hitInfo.point.z);
 
-                _eveAnimator.SetIKPosition(AvatarIKGoal.LeftFoot, _leftFootPosition); 
+                _eveAnimator.SetIKPosition(AvatarIKGoal.LeftFoot, _leftFootPosition);
 
                 Quaternion _rot = Quaternion.LookRotation(transform.forward);
 
@@ -50,7 +39,7 @@ public class IK : MonoBehaviour
 
                 float _rayUnderFoot = _rayCastFloorLength - _ankleHeight - _ankleOffset;
                 float _rayInFloor = _hitInfo.distance - _ankleHeight - _ankleOffset;
-                float _IKWeight = 1 - _rayInFloor / _rayUnderFoot;
+                float _IKWeight = 1 - (_rayInFloor / _rayUnderFoot);
                 m_ikWeightLeft = _IKWeight;
 
                 _eveAnimator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, _IKWeight);
@@ -63,9 +52,8 @@ public class IK : MonoBehaviour
             _rightFootDetector.y += _ankleOffset;
             Ray _rayRight = new Ray(_rightFootDetector, Vector3.down);
             Debug.DrawRay(_rayRight.origin, _rayRight.direction * _rayCastFloorLength, Color.red);
-            RaycastHit _hitInfoRight;
 
-            if (Physics.Raycast(_rayRight, out _hitInfoRight, _rayCastFloorLength + _ankleOffset))
+            if (Physics.Raycast(_rayRight, out RaycastHit _hitInfoRight, _rayCastFloorLength + _ankleOffset))
             {
                 Vector3 _rightFootPosition = new Vector3(_hitInfoRight.point.x, _hitInfoRight.point.y + _ankleHeight, _hitInfoRight.point.z);
 
@@ -77,7 +65,7 @@ public class IK : MonoBehaviour
 
                 float _rayUnderFoot = _rayCastFloorLength - _ankleHeight - _ankleOffset;
                 float _rayInFloor = _hitInfoRight.distance - _ankleHeight - _ankleOffset;
-                float _IKWeight = 1 - _rayInFloor / _rayUnderFoot;
+                float _IKWeight = 1 - (_rayInFloor / _rayUnderFoot);
                 m_ikWeightRight = _IKWeight;
 
                 _eveAnimator.SetIKPositionWeight(AvatarIKGoal.RightFoot, _IKWeight);
@@ -101,7 +89,6 @@ public class IK : MonoBehaviour
     #region Privates
 
     private Animator _eveAnimator;
-    
 
     #endregion
 }
