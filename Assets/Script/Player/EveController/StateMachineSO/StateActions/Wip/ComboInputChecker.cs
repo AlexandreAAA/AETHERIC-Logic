@@ -15,18 +15,7 @@ namespace EveController
             if (controller.playerInput.attackTrigger)
             {
                 controller.anim.SetTrigger("Melee Attack");
-                
             }
-
         }
-
-        //public TransformVariable launcher;
-
-        //public void LaunchFireball()
-        //{
-        //    GameObject fireball = PlayerObjectPool.SharedInstance.GetPooledObject(PlayerObjectPool.SharedInstance.fireball);
-        //    fireball.transform.SetPositionAndRotation(launcher.value.position, launcher.value.rotation);
-        //    fireball.SetActive(true);
-        //}
     }
 }

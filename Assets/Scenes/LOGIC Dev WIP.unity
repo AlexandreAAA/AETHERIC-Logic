@@ -669,7 +669,7 @@ MonoBehaviour:
   fireball:
     isInit: 0
     pooledObjects: []
-    objectToPool: {fileID: 2985964748677205126, guid: 675aac3c376f4b24c8daffd9764e7e8a,
+    objectToPool: {fileID: 2985964748677205126, guid: b60d04ceaac8e9e409e297ae04a96ae2,
       type: 3}
     amountToPool: 3
   explosion:
@@ -677,7 +677,7 @@ MonoBehaviour:
     pooledObjects: []
     objectToPool: {fileID: 4632335721404752164, guid: 1397d9d9b17e2c74f8acdcc786353feb,
       type: 3}
-    amountToPool: 3
+    amountToPool: 4
 --- !u!1 &271541474
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,25 +878,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271541474}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f433b69850d2c94980b8985763acd04, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c002a5aab0d37049b7116de9c894fef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Weight: 1
-  MaxStep: 0.5
-  FootRadius: 0.15
-  Ground:
-    serializedVersion: 2
-    m_Bits: 512
-  Offset: 0
-  HipsPositionSpeed: 1
-  FeetPositionSpeed: 2
-  FeetRotationSpeed: 90
-  HipsWeight: 0.75
-  FootPositionWeight: 1
-  FootRotationWeight: 1
-  ShowDebug: 1
+  launcher: {fileID: 11400000, guid: 6c6e2a7138ac21043a56afb849e5f6b9, type: 2}
+  Fireball1:
+    animToAddEvent: {fileID: 7400000, guid: 2748c03b30a156545a7259f1b7d1a40a, type: 2}
+    addAtTime: 0.8
+    functionToRaise: LaunchFireball
+  Fireball2:
+    animToAddEvent: {fileID: 7400000, guid: 5f7f1a0972875584caeceb0812aa969d, type: 2}
+    addAtTime: 0.6
+    functionToRaise: LaunchFireball
 --- !u!1 &273274063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,8 +1534,8 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194230}
-  - component: {fileID: 963194231}
   - component: {fileID: 963194232}
+  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2350,14 +2345,6 @@ MonoBehaviour:
     m_ParentHash: -929675902
   - m_Hash: 1251315677
     m_ParentHash: 756556552
-  - m_Hash: -141397899
-    m_ParentHash: 756556552
-  - m_Hash: 955154224
-    m_ParentHash: -141397899
-  - m_Hash: -311179710
-    m_ParentHash: 756556552
-  - m_Hash: 1877387491
-    m_ParentHash: 756556552
   - m_Hash: 793892057
     m_ParentHash: 756556552
   - m_Hash: -1005802792
@@ -2368,6 +2355,16 @@ MonoBehaviour:
     m_ParentHash: 756556552
   - m_Hash: 662883012
     m_ParentHash: -913971645
+  - m_Hash: -1978076831
+    m_ParentHash: 756556552
+  - m_Hash: -414746224
+    m_ParentHash: -1978076831
+  - m_Hash: 2105694080
+    m_ParentHash: -1978076831
+  - m_Hash: 1876607878
+    m_ParentHash: -1978076831
+  - m_Hash: 2020861401
+    m_ParentHash: -1978076831
   - m_Hash: -1288301330
     m_ParentHash: 756556552
   - m_Hash: -131500426
@@ -2390,6 +2387,12 @@ MonoBehaviour:
     m_ParentHash: 756556552
   - m_Hash: 1836585469
     m_ParentHash: 282670155
+  - m_Hash: 2005341514
+    m_ParentHash: 756556552
+  - m_Hash: -975424606
+    m_ParentHash: 2005341514
+  - m_Hash: 583573754
+    m_ParentHash: 2005341514
 --- !u!4 &1450921217
 Transform:
   m_ObjectHideFlags: 0
@@ -7305,6 +7308,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1687049229}
+  - component: {fileID: 1687049230}
   m_Layer: 7
   m_Name: Launcher
   m_TagString: Untagged
@@ -7326,6 +7330,19 @@ Transform:
   m_Father: {fileID: 1354881670}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1687049230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687049228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03463d3c813764949bb5ab1a2fc0914e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 11400000, guid: 6c6e2a7138ac21043a56afb849e5f6b9, type: 2}
 --- !u!1001 &1740362291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10278,11 +10295,11 @@ MonoBehaviour:
   m_castingSpeed: 4
   _fireBallPrefab: {fileID: 2985964748677205126, guid: 675aac3c376f4b24c8daffd9764e7e8a,
     type: 3}
-  _launcher: {fileID: 0}
+  _launcher: {fileID: 5344905360633207741}
   _fireBall: {fileID: 9092918567547518126}
   _attackTime: 0
   m_timeBeforeNextAttack: 1.2
-  _projectileSpeed: 0
+  _projectileSpeed: 20
   _fireballDeathTime: 5
   _targetingLayer:
     serializedVersion: 2
