@@ -11,22 +11,15 @@ public class GoForward : MonoBehaviour
 
     #endregion
 
-
     #region Unity API
-    void Start()
+    private void Start()
     {
         _fireballRb = GetComponent<Rigidbody>();
     }
 
-
-    void Update()
-    {
-
-    }
-
     private void FixedUpdate()
     {
-        Vector3 velocity = transform.forward * _fireBallSpeed * Time.fixedDeltaTime;
+        Vector3 velocity = _fireBallSpeed * Time.fixedDeltaTime * transform.forward;
         Vector3 _newPos = transform.position + velocity;
         _fireballRb.MovePosition(_newPos);
     }
@@ -38,21 +31,17 @@ public class GoForward : MonoBehaviour
             Instantiate(_bigExplosion, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
-
-
     }
     #endregion
 
-
     #region MainMethod
 
-    public void _setFireballSpeed(float _speed)
+    public void SetFireballSpeed(float _speed)
     {
         _fireBallSpeed = _speed;
     }
 
     #endregion
-
 
     #region Privates
 

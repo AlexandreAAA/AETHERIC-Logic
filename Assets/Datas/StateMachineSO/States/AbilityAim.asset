@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21b1cb88d0688fe43871b95ee873b242, type: 3}
+  m_Name: AbilityAim
+  m_EditorClassIdentifier: 
+  onEnter:
+  - {fileID: 11400000, guid: 6656a5dc7968ec84e9e86ed6c0cabb41, type: 2}
+  onUpdate:
+  - {fileID: 11400000, guid: ff7bb5da50f0ff444a6dabce8d4c8f1f, type: 2}
+  - {fileID: 11400000, guid: 9bed42d319c5c844991e9691ce825307, type: 2}
+  onFixedUpdate:
+  - {fileID: 11400000, guid: f2d0ee37a76471f49aea780a42e7e58f, type: 2}
+  onExit:
+  - {fileID: 11400000, guid: 50a7ec0805107ad47a26ff7baa68f6b2, type: 2}
+  transitions:
+  - id: 1
+    condition: {fileID: 11400000, guid: 0234fdfc8b941af458d0832b8bb85340, type: 2}
+    targetState: {fileID: 11400000, guid: 06c3cc5913975c343804ea8a2aee666f, type: 2}
+    disable: 0

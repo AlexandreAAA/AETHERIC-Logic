@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21b1cb88d0688fe43871b95ee873b242, type: 3}
+  m_Name: Locomotion Casting
+  m_EditorClassIdentifier: 
+  onEnter:
+  - {fileID: 11400000, guid: 713442a7c904781408a8c2c7a255ebc6, type: 2}
+  - {fileID: 11400000, guid: 400b065f7c24ec246afeddbf5b6c39d5, type: 2}
+  onUpdate:
+  - {fileID: 11400000, guid: 1ffbf091873ef2d46b6c6c0972ec77bd, type: 2}
+  - {fileID: 11400000, guid: aa0c2ae311302624288b4527a33682f5, type: 2}
+  - {fileID: 11400000, guid: 9bed42d319c5c844991e9691ce825307, type: 2}
+  - {fileID: 11400000, guid: 647f6500e850aaf42ab0768d7aacd7c2, type: 2}
+  onFixedUpdate:
+  - {fileID: 11400000, guid: daa1831a95e89384fb7e0fb9b37d8c17, type: 2}
+  - {fileID: 11400000, guid: 25a4e1fb48bcaa24794967a7d676ba30, type: 2}
+  - {fileID: 11400000, guid: f2d0ee37a76471f49aea780a42e7e58f, type: 2}
+  onExit:
+  - {fileID: 11400000, guid: 52f31903f27ec904b8275a5410e818bc, type: 2}
+  transitions:
+  - id: 0
+    condition: {fileID: 11400000, guid: 75f377d876cf13140a9524cec48407d9, type: 2}
+    targetState: {fileID: 11400000, guid: 60c14e3a891db1a4384f35d28c759f9a, type: 2}
+    disable: 0
+  - id: 1
+    condition: {fileID: 11400000, guid: 85c759128ae8bea478a6f7339334553e, type: 2}
+    targetState: {fileID: 11400000, guid: 346937a948433804481f1d671e2635da, type: 2}
+    disable: 0

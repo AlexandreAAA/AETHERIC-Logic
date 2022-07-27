@@ -66,7 +66,7 @@ namespace EveController
             }
 
             controller.mouvementVariable.moveAmount = moveAmount;
-            controller.mouvementVariable.moveDirection = targetDir * moveAmount;
+            controller.mouvementVariable.moveDirection = targetDir;
         }
     }
 }

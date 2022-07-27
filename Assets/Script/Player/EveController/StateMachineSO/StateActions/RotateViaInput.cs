@@ -30,7 +30,6 @@ namespace EveController
             }
 
             controller.mouvementVariable.moveDirection = targetdir;
-
             Quaternion tr = Quaternion.LookRotation(targetdir);
             //Quaternion targetRotation = Quaternion.Slerp(controller.mTransform.rotation, tr, 
             //                            Time.deltaTime * controller.mouvementVariable.moveAmount * speed);
