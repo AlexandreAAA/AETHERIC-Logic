@@ -8,8 +8,8 @@ namespace EveController.Abilities
     {
         #region Exposed
 
-        [SerializeField]
-        private GameObject _bigExplosion;
+        
+        
 
         #endregion
 
@@ -19,8 +19,15 @@ namespace EveController.Abilities
             _fireballRb = GetComponent<Rigidbody>();
         }
 
+        private void OnEnable()
+        {
+            timeToDisable = disableTime;
+        }
+
         private void FixedUpdate()
         {
+            DisableGO();
+
             Vector3 velocity = _fireBallSpeed * Time.fixedDeltaTime * transform.forward;
             Vector3 _newPos = transform.position + velocity;
             _fireballRb.MovePosition(_newPos);
@@ -45,12 +52,24 @@ namespace EveController.Abilities
             _fireBallSpeed = _speed;
         }
 
+        private void DisableGO()
+        {
+            timeToDisable -= Time.fixedDeltaTime;
+
+            if (timeToDisable <= 0)
+            {
+                gameObject.SetActive(false);
+            }
+        }
+
         #endregion
 
         #region Privates
 
         private Rigidbody _fireballRb;
         public float _fireBallSpeed;
+        public float disableTime;
+        public float timeToDisable;
 
         #endregion
     }

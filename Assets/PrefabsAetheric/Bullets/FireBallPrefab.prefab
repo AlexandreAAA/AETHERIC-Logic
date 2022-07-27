@@ -4951,6 +4951,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59fdaa3e849970b4fbca1ab2ae27831f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bigExplosion: {fileID: 4632335721404752164, guid: 1397d9d9b17e2c74f8acdcc786353feb,
-    type: 3}
   _fireBallSpeed: 20
+  disableTime: 1.7
+  timeToDisable: 0
