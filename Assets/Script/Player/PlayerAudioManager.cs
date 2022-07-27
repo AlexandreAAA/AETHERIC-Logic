@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EveController;
 
 public class PlayerAudioManager : MonoBehaviour
 {
@@ -34,7 +35,6 @@ public class PlayerAudioManager : MonoBehaviour
 
     #endregion
 
-
     #region Unity API
 
     private void Awake()
@@ -46,41 +46,43 @@ public class PlayerAudioManager : MonoBehaviour
 
     private void Start()
     {
-        _playerController = GetComponentInParent<PlayerController>();
-        _iK = GetComponent<IK>();
+        _playerController = GetComponentInParent<StateController>();
     }
-
-   
 
     #region Main Method
 
     public void OnLeftFootSound()
     {
-        if (!_playerController.m_isCasting)
+        if (!_playerController.isCasting && _playerController.isrunning)
         {
-
             _eveAudioSource.PlayOneShot(_leftFootSteps[Random.Range(0, _leftFootSteps.Length)], _footStepVolume);
         }
     }
 
     public void OnRightFoot()
     {
-        if (!_playerController.m_isCasting)
+        if (!_playerController.isCasting && _playerController.isrunning)
         {
-
             _eveAudioSource.PlayOneShot(_rightFootSteps[Random.Range(0, _rightFootSteps.Length)], _footStepVolume);
         }
-
     }
 
     public void LeftCast()
     {
-        _eveAudioSource.PlayOneShot(_leftFootSteps[Random.Range(0, _leftFootSteps.Length)], _footStepVolume);
+        if (_playerController.isCasting)
+        {
+
+            _eveAudioSource.PlayOneShot(_leftFootSteps[Random.Range(0, _leftFootSteps.Length)], _footStepVolume);
+        }
     }
 
     public void RightCast()
     {
-        _eveAudioSource.PlayOneShot(_rightFootSteps[Random.Range(0, _rightFootSteps.Length)], _footStepVolume);
+        if (_playerController.isCasting)
+        {
+
+            _eveAudioSource.PlayOneShot(_rightFootSteps[Random.Range(0, _rightFootSteps.Length)], _footStepVolume);
+        }
     }
 
     public void AttackSound(int _audioClip)
@@ -103,17 +105,10 @@ public class PlayerAudioManager : MonoBehaviour
         _eveAudioSource.PlayOneShot(_voiceFx[0], 0.5f);
     }
 
-
     #endregion
 
-
     #region Privates
-
     public AudioSource _eveAudioSource;
-
-    private PlayerController _playerController;
-
-    private IK _iK;
-
+    private StateController _playerController;
     #endregion
 }
