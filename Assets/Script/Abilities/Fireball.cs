@@ -8,9 +8,6 @@ namespace EveController.Abilities
     {
         #region Exposed
 
-        
-        
-
         #endregion
 
         #region Unity API
