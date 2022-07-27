@@ -50,7 +50,7 @@ namespace EveController.Abilities
         #region Privates
 
         private Rigidbody _fireballRb;
-        private float _fireBallSpeed;
+        public float _fireBallSpeed;
 
         #endregion
     }
