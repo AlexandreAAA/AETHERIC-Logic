@@ -5,5 +5,12 @@ The Goal of this Project is to create a fluent character controller to be use as
 As the foundation is the state programming pattern coupled with the use of scriptable objects in order to be modular and highly adaptable
 in order to meet projects requirement and accelerate the workflow.
 
+Control:
+ZSQD : Move
+LShift : Dash Abilities / Take Cover
+C : Crouch
+Left Mouse: Attack
+Right Mouse : Aim
+
 Prototype Level available there : 
 https://2fingers.itch.io/aetheric-prototype
